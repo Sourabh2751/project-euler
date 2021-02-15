@@ -1,29 +1,28 @@
 package projecteuler;
+import java.math.BigInteger;
 //What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 public class p5 {
-	public static void main(String args[])
+	public static void main(String[] args) {
+		p5 ob = new p5();
+	System.out.println(ob.multiple());
+
+		// TODO Auto-generated method stub
+
+	}
+	public static String multiple()
 	{
-		int i=1,J,min=0,c=0;
-		while(i>0)
+		BigInteger allcm = BigInteger.ONE;
+		for(int i =1;i<=20;i++)
 		{
-			for(J=1;J<=20;J++)
-			{
-				if(i%J==0)
-				{
-					c=1;
-				}
-				else{
-					c=0;
-					break;
-					}}i++;
-					if(c==1)
-					{
-						min=i-1;
-						break;
-						
-					}
-				}
-			System.out.println(min);	
+			allcm = lcm(BigInteger.valueOf(i),allcm);
+		}
+		return allcm.toString();
+
+		
+	}
+	public static BigInteger lcm (BigInteger x,BigInteger y) {
+		return x.divide(x.gcd(y)).multiply(y);
+		
 	}
 }
 //output 232792560
