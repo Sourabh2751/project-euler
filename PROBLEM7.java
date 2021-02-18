@@ -1,7 +1,7 @@
 
 package projecteuler;
 //What is the 10 001st prime number?
-public class p7 {
+public class PROBLEM7 {
 	
 		public static void main(String args[])
 		{
