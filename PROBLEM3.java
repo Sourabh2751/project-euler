@@ -1,6 +1,6 @@
 
 /*What is the largest prime factor of the number 600851475143 ?*/
-public class P3
+public class PROBLEM3
 {
 static long pf(long n)
 {
