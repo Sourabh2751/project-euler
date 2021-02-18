@@ -1,5 +1,5 @@
 //Find the sum of all the primes below two million.
-public class p10 {
+public class PROBLEM10 {
 	public static void main(String args[])
 	{
 	    boolean cnd=true;
