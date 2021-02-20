@@ -1,29 +1,28 @@
 //Find the sum of all the primes below two million.
+package projecteuler;
 public class PROBLEM10 {
 	public static void main(String args[])
-	{
-	    boolean cnd=true;
-	    long sum=2;
-		
-		for(long i=3;i<2000000;i=i+2)
-		{ 
-		    double sr=Math.sqrt(i);
-		    long d=Math.round(sr);
-		    while(d>1)
-		    {
-		        cnd=true;
-		        if(i%d==0)
-		        {
-		            cnd=false;
-		            break;
-		          }
-		          d--;
-		      }
-		      if(cnd)
-		      {
-		          sum=sum+i;
-		  }
-		  }
+	{ 
+		long n=2000000,sum=0;
+		 boolean prime[] = new boolean[(int) (n+1)]; 
+	        for(int i=0;i<n;i++) 
+	            prime[i] = true; 
+	          
+	        for(int p = 2; p*p <=n; p++) 
+	        { 
+	            
+	            if(prime[p] == true) 
+	            { 
+	                
+	                for(int i = p*p; i <= n; i += p) 
+	                    prime[i] = false; 
+	            } 
+	        } 
+	        for(int i = 2; i <= n; i++) 
+	        { 
+	            if(prime[i] == true) 
+	                sum=sum+i;
+	        } 
 		  System.out.println(sum);
 }
 
